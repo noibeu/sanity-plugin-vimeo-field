@@ -1,6 +1,6 @@
 {
   "name": "sanity-plugin-vimeo-field-v4",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "",
   "keywords": [
     "sanity",
@@ -79,13 +79,14 @@
     "sanity": "^4.0.0"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=20"
   },
   "sideEffects": false,
   "browserslist": "extends @sanity/browserslist-config",
   "sanityPlugin": {
     "verifyPackage": {
-      "tsc": false
+      "tsc": false,
+      "nodeEngine": false
     }
   }
 }

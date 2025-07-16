@@ -14,6 +14,10 @@ npm install sanity-plugin-vimeo-field-v4
 
 ℹ This is a **Sanity Studio** v4 plugin (fully backward compatible with existing schemas)
 
+**Requirements:**
+- Node.js ≥ 20
+- Sanity Studio v4
+
 ## Configuration
 
 Add your Vimeo access token to your `.env`
@@ -76,9 +80,10 @@ defineField({
 ```
 
 Simply:
-1. Update your `sanity.config.ts` to import from `sanity-plugin-vimeo-field-v4`
-2. Upgrade Sanity to v4
-3. Everything else works exactly the same!
+1. Ensure you have Node.js ≥ 20
+2. Update your `sanity.config.ts` to import from `sanity-plugin-vimeo-field-v4`
+3. Upgrade Sanity to v4
+4. Everything else works exactly the same!
 
 ## License
 
