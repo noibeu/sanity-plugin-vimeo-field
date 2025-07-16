@@ -1,10 +1,14 @@
-// @ts-nocheck
 import React, {useState} from 'react'
 import {Inline, TextInput, Text, Code, Button, Stack, Spinner} from '@sanity/ui'
 import {SyncIcon} from '@sanity/icons'
 
-const DataFetcher = (props) => {
-  // eslint-disable-next-line react/prop-types
+interface DataFetcherProps {
+  accessToken?: string
+  onSuccess: (data: any) => void
+  fields?: string[]
+}
+
+const DataFetcher = (props: DataFetcherProps) => {
   const {accessToken, onSuccess, fields} = props
   const [vimeoId, setVimeoId] = useState('')
   const [isFetching, setIsFetching] = useState(false)
@@ -17,7 +21,7 @@ const DataFetcher = (props) => {
     url += `,${vimeoFields}`
   }
 
-  const handleChange = (event) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setVimeoId(event.target.value)
   }
   const handleSubmit = async () => {

@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React from 'react'
 import {Card, Inline, Button, Text, TextInput, Stack} from '@sanity/ui'
 import DataFetcher from './DataFetcher'
@@ -10,7 +9,7 @@ export interface InputProps extends VimeoFieldInput {
   config: Config
 }
 
-export const VideoInput = (config: Config, props: InputProps) => {
+export const VideoInput = (config: Config, props: VimeoFieldInput) => {
   const {fields} = props?.schemaType?.options
   const {accessToken} = config
 
@@ -19,7 +18,7 @@ export const VideoInput = (config: Config, props: InputProps) => {
     onChange(unset())
   }
 
-  const setVimeoData = (data) => {
+  const setVimeoData = (data: any) => {
     onChange(data ? set(data) : unset())
   }
 

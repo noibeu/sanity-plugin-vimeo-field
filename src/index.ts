@@ -1,7 +1,7 @@
 import {definePlugin, defineType} from 'sanity'
 
-import {vimeo} from './schema'
 import {VideoInput} from './components/VideoInput'
+
 interface Config {
   accessToken?: string
 }
@@ -10,7 +10,7 @@ const defaultConfig: Config = {
   accessToken: '',
 }
 
-export const vimeoField = definePlugin<Config | void>((userConfig) => {
+export const vimeoField = definePlugin<Config | void>((userConfig: Config = {}) => {
   const config: Config = {...defaultConfig, ...userConfig}
   return {
     name: 'sanity-plugin-vimeo-field',

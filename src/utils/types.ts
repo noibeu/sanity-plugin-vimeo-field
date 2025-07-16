@@ -1,11 +1,10 @@
-// @ts-nocheck
 import type {ObjectInputProps} from 'sanity'
 
 export interface Config {
   /**
    * Pass Vimeo Access Token
    **/
-  accessToken: string | undefined
+  accessToken?: string
 }
 
 export type VimeoFieldInput = ObjectInputProps

@@ -1,4 +1,4 @@
-# Sanity Plugin Vimeo Field
+# Sanity Plugin Vimeo Field (v4 Compatible)
 
 Retrieve Vimeo video data via the API with an access token and store it in Sanity.
 
@@ -7,12 +7,12 @@ Retrieve Vimeo video data via the API with an access token and store it in Sanit
 ## Installation
 
 ```sh
-yarn install sanity-plugin-vimeo-field
+yarn install sanity-plugin-vimeo-field-v4
 # or npm
-npm install sanity-plugin-vimeo-field
+npm install sanity-plugin-vimeo-field-v4
 ```
 
-ℹ This is a **Sanity Studio** v3 plugin
+ℹ This is a **Sanity Studio** v4 plugin (fully backward compatible with existing schemas)
 
 ## Configuration
 
@@ -27,7 +27,7 @@ Add the plugin to your Sanity configuration
 ```ts
 // `sanity.config.ts` / `sanity.config.js`:
 import {defineConfig} from 'sanity'
-import {vimeoField} from 'sanity-plugin-vimeo-field'
+import {vimeoField} from 'sanity-plugin-vimeo-field-v4'
 
 export default defineConfig({
   // ...
@@ -58,6 +58,27 @@ defineField({
 ## Options
 
 By default the plugin stores the fields `name`, `pictures`, `files` and `play`, but you can extend (not overwrite) the fields through the options. Please be sure to add fields as an array of strings. See the [vimeo response documentation](https://developer.vimeo.com/api/reference/response/video) for a list of available fields.
+
+## Migration from v3
+
+This plugin is 100% compatible with existing Sanity v3 schemas. No changes are required to your existing field definitions:
+
+```ts
+// Your existing schema works as-is
+defineField({
+  title: 'Id video Vimeo',
+  name: 'vimeo',
+  type: 'vimeo',
+  options: {
+    fields: ['duration'],
+  },
+})
+```
+
+Simply:
+1. Update your `sanity.config.ts` to import from `sanity-plugin-vimeo-field-v4`
+2. Upgrade Sanity to v4
+3. Everything else works exactly the same!
 
 ## License
 

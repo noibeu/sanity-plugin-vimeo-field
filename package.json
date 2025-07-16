@@ -1,5 +1,5 @@
 {
-  "name": "sanity-plugin-vimeo-field",
+  "name": "sanity-plugin-vimeo-field-v4",
   "version": "1.0.1",
   "description": "",
   "keywords": [
@@ -20,8 +20,8 @@
     ".": {
       "types": "./dist/index.d.ts",
       "source": "./src/index.ts",
-      "require": "./dist/index.js",
       "import": "./dist/index.esm.js",
+      "require": "./dist/index.js",
       "default": "./dist/index.esm.js"
     },
     "./package.json": "./package.json"
@@ -51,6 +51,7 @@
     "@sanity/ui": "^2.0.1"
   },
   "devDependencies": {
+    "@sanity/browserslist-config": "^1.0.5",
     "@sanity/pkg-utils": "^4.1.2",
     "@sanity/plugin-kit": "^3.1.10",
     "@types/react": "^18.2.51",
@@ -69,17 +70,19 @@
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
     "rimraf": "^5.0.5",
-    "sanity": "^3.27.1",
-    "styled-components": "^5.3.11",
+    "sanity": "^4.0.0",
+    "styled-components": "^6.1.15",
     "typescript": "^5.3.3"
   },
   "peerDependencies": {
     "react": "^18",
-    "sanity": "^3"
+    "sanity": "^4.0.0"
   },
   "engines": {
     "node": ">=14"
   },
+  "sideEffects": false,
+  "browserslist": "extends @sanity/browserslist-config",
   "sanityPlugin": {
     "verifyPackage": {
       "tsc": false
